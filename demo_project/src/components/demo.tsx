@@ -7,13 +7,16 @@ const Demo: React.FC = () => {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setValue((prevValue) => prevValue + 5);
+      setValue((prevValue) => prevValue + 1);
     }, 2000);
     return () => clearTimeout(timeoutId);
   }, [value])
 
   return (
-    <div>Count : {value}</div>
+    <>
+      <div>Count : {value}</div>
+      <p>Increased by one for every second</p>
+    </>
   )
 }
 
